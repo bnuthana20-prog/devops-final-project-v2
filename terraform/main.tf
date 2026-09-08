@@ -3,7 +3,11 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"  
+      version = "~> 5.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"
     }
   }
 }
@@ -12,27 +16,24 @@ provider "aws" {
   region = var.aws_region
 }
 
-# VPC - CloudOps Automator Hyderabad
+resource "random_id" "bucket_suffix" {
+  byte_length = 4
+}
+
 resource "aws_vpc" "main" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
   enable_dns_support   = true
-
   tags = {
-    Name        = "cloudops-automator-vpc-hyd"
-    Environment = "dev"
-    Project     = "CloudOps Automator"
-    Region      = "ap-south-2"
+    Name = "cloudops-automator-vpc-hyd"
   }
 }
 
-# Internet Gateway
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
   tags = { Name = "cloudops-igw-hyd" }
 }
 
-# Public Subnet
 resource "aws_subnet" "public" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
@@ -41,7 +42,6 @@ resource "aws_subnet" "public" {
   tags = { Name = "cloudops-public-subnet-hyd" }
 }
 
-# Private Subnet
 resource "aws_subnet" "private" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.2.0/24"
@@ -49,7 +49,6 @@ resource "aws_subnet" "private" {
   tags = { Name = "cloudops-private-subnet-hyd" }
 }
 
-# Route Table
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
   route {
@@ -64,7 +63,6 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 
-# Security Group
 resource "aws_security_group" "main" {
   name        = "cloudops-sg-hyd"
   description = "Allow SSH and HTTP"
@@ -88,28 +86,17 @@ resource "aws_security_group" "main" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  tags = { Name = "cloudops-sg-hyd" }
 }
 
-# EC2 Instance - t3.micro for ap-south-2
 resource "aws_instance" "app" {
-  ami           = var.ami_id
-  instance_type = "t3.micro"
-  subnet_id     = aws_subnet.public.id
+  ami                    = var.ami_id
+  instance_type          = "t3.micro"
+  subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.main.id]
-
-  tags = {
-    Name = "cloudops-app-hyd"
-    Project = "CloudOps Automator"
-  }
+  tags = { Name = "cloudops-app-hyd" }
 }
 
-# S3 Bucket for logs
 resource "aws_s3_bucket" "logs" {
   bucket = "cloudops-logs-hyd-${random_id.bucket_suffix.hex}"
   tags = { Name = "cloudops-logs-hyd" }
-}
-
-resource "random_id" "bucket_suffix" {
-  byte_length = 4
 }
