@@ -13,7 +13,7 @@ terraform {
 }
 
 provider "aws" {
-  region = var.aws_region
+  region = "ap-south-2"
 }
 
 resource "random_id" "bucket_suffix" {
