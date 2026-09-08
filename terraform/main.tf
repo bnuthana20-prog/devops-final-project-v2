@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"   # FIXED: was 5.100.0 with expired key
+      version = "~> 5.0"  
     }
   }
 }
