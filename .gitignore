@@ -1,0 +1,7 @@
+awscliv2.zip
+terraform/.terraform/
+.terraform.lock.hcl
+*.tfstate*
+awscliv2.zip
+terraform/.terraform/
+*.tfstate*

@@ -1,0 +1,27 @@
+name: CloudOps Automator CI/CD - ap-south-2
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Docker
+        uses: docker/setup-buildx-action@v3
+      - name: Build Docker Image
+        run: |
+          cd docker
+          docker build -t cloudops-automator:latest .
+      - name: Test Container
+        run: |
+          docker run -d -p 8080:80 --name test cloudops-automator:latest
+          sleep 5
+          docker ps
+          docker stop test
+      - name: Terraform Check
+        run: |
+          cd terraform
+          terraform fmt -check
+          terraform init -backend=false
+          terraform validate
