@@ -1,0 +1,87 @@
+/home/bnuthana/devops-final-project-v2
+bnuthana
+total 20
+drwxr-xr-x  5 bnuthana bnuthana 4096 Sep  8 06:53 .
+drwxr-x--- 22 bnuthana bnuthana 4096 Sep  8 06:15 ..
+drwxr-xr-x  8 bnuthana bnuthana 4096 Sep  8 06:15 .git
+drwxr-xr-x  3 bnuthana bnuthana 4096 Sep  8 06:53 docs
+drwxr-xr-x  2 bnuthana bnuthana 4096 Sep  8 06:53 scripts
+total 4
+-rw-r--r-- 1 bnuthana bnuthana 16 Sep  8 06:53 file1.txt
+-rw-r--r-- 1 bnuthana bnuthana  0 Sep  8 06:53 file2.log
+DevOps Final v2
+./file2_old.log
+./file1_backup.txt
+./file1.txt
+DevOps Final v2
+-rwxr-xr-x 1 bnuthana bnuthana 16 Sep  8 06:53 file1.txt
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  21916 13060 ?        Ss   05:43   0:02 /sbin/init
+root           2  0.0  0.0   3172  2204 hvc0     Sl+  05:43   0:00 /init
+root           6  0.0  0.0   3188  2128 hvc0     Sl+  05:43   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          55  0.0  0.2  50464 16280 ?        S<s  05:43   0:01 /usr/lib/systemd/systemd-journald
+root         100  0.1  0.0  25216  6632 ?        Ss   05:43   0:05 /usr/lib/systemd/systemd-udevd
+root         115  0.0  0.0 227700  1884 ?        Ssl  05:43   0:00 snapfuse /var/lib/snapd/snaps/core_17292.snap /snap/core/17292 -o ro,nodev,allow_other,suid
+root         120  0.0  0.0 152936  1852 ?        Ssl  05:43   0:00 snapfuse /var/lib/snapd/snaps/core20_2866.snap /snap/core20/2866 -o ro,nodev,allow_other,suid
+root         126  0.0  0.0 153068  1860 ?        Ssl  05:43   0:00 snapfuse /var/lib/snapd/snaps/core24_1643.snap /snap/core24/1643 -o ro,nodev,allow_other,suid
+root         130  0.0  0.0 152936  1572 ?        Ssl  05:43   0:00 snapfuse /var/lib/snapd/snaps/helm_532.snap /snap/helm/532 -o ro,nodev,allow_other,suid
+root         138  0.0  0.0 153068  1580 ?        Ssl  05:43   0:00 snapfuse /var/lib/snapd/snaps/helm_539.snap /snap/helm/539 -o ro,nodev,allow_other,suid
+root         142  0.0  0.0 152936  1776 ?        Ssl  05:43   0:00 snapfuse /var/lib/snapd/snaps/kubectl_3816.snap /snap/kubectl/3816 -o ro,nodev,allow_other,suid
+root         146  0.0  0.0 153068  1752 ?        Ssl  05:43   0:00 snapfuse /var/lib/snapd/snaps/kubectl_3833.snap /snap/kubectl/3833 -o ro,nodev,allow_other,suid
+root         152  0.0  0.0 153068  1860 ?        Ssl  05:43   0:00 snapfuse /var/lib/snapd/snaps/minikube_4.snap /snap/minikube/4 -o ro,nodev,allow_other,suid
+root         156  0.0  0.0 227832  1940 ?        Ssl  05:43   0:00 snapfuse /var/lib/snapd/snaps/snapd_26865.snap /snap/snapd/26865 -o ro,nodev,allow_other,suid
+systemd+     241  0.0  0.1  21340 12884 ?        Ss   05:43   0:00 /usr/lib/systemd/systemd-resolved
+systemd+     242  0.0  0.0  91032  7852 ?        Ssl  05:43   0:01 /usr/lib/systemd/systemd-timesyncd
+root         255  0.0  0.0   4236  2624 ?        Ss   05:43   0:00 /usr/sbin/cron -f -P
+message+     256  0.0  0.0   9604  5288 ?        Ss   05:43   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+jenkins      260  2.1  7.4 9035984 597796 ?      Ssl  05:43   1:30 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080
+Filesystem      Size  Used Avail Use% Mounted on
+none            3.9G     0  3.9G   0% /usr/lib/modules/6.6.114.1-microsoft-standard-WSL2
+none            3.9G  4.0K  3.9G   1% /mnt/wsl
+drivers         475G  267G  209G  57% /usr/lib/wsl/drivers
+/dev/sdd       1007G  4.6G  952G   1% /
+none            3.9G  124K  3.9G   1% /mnt/wslg
+none            3.9G     0  3.9G   0% /usr/lib/wsl/lib
+rootfs          3.8G  2.8M  3.8G   1% /init
+none            3.9G  892K  3.9G   1% /run
+none            3.9G     0  3.9G   0% /run/lock
+none            3.9G     0  3.9G   0% /run/shm
+none            3.9G   80K  3.9G   1% /mnt/wslg/versions.txt
+none            3.9G   80K  3.9G   1% /mnt/wslg/doc
+C:\             475G  267G  209G  57% /mnt/c
+snapfuse        106M  106M     0 100% /snap/core/17292
+snapfuse         64M   64M     0 100% /snap/core20/2866
+snapfuse         67M   67M     0 100% /snap/core24/1643
+snapfuse         22M   22M     0 100% /snap/helm/532
+snapfuse         22M   22M     0 100% /snap/helm/539
+snapfuse         14M   14M     0 100% /snap/kubectl/3816
+snapfuse         14M   14M     0 100% /snap/kubectl/3833
+snapfuse         53M   53M     0 100% /snap/minikube/4
+snapfuse         50M   50M     0 100% /snap/snapd/26865
+tmpfs           779M   20K  779M   1% /run/user/1000
+               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       1.1Gi       6.4Gi       3.9Mi       300Mi       6.5Gi
+Swap:          2.0Gi          0B       2.0Gi
+ 06:53:28 up  1:09,  1 user,  load average: 0.02, 0.11, 0.07
+Linux NUTHANA 6.6.114.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+SHELL=/bin/bash
+WSL2_GUI_APPS_ENABLED=1
+WSL_DISTRO_NAME=Ubuntu
+NAME=NUTHANA
+PWD=/tmp/devops-lab
+LOGNAME=bnuthana
+HOME=/home/bnuthana
+LANG=C.UTF-8
+WSL_INTEROP=/run/WSL/955_interop
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+WAYLAND_DISPLAY=wayland-0
+LESSCLOSE=/usr/bin/lesspipe %s %s
+TERM=xterm-256color
+LESSOPEN=| /usr/bin/lesspipe %s
+USER=bnuthana
+DISPLAY=:0
+SHLVL=2
+XDG_RUNTIME_DIR=/run/user/1000
+WSLENV=
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+Linux lab done at Tue Sep  8 06:53:28 UTC 2026
