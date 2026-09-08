@@ -31,7 +31,9 @@ resource "aws_vpc" "main" {
 
 resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
-  tags = { Name = "cloudops-igw-hyd" }
+  tags = {
+    Name = "cloudops-igw-hyd"
+  }
 }
 
 resource "aws_subnet" "public" {
@@ -39,14 +41,18 @@ resource "aws_subnet" "public" {
   cidr_block              = "10.0.1.0/24"
   availability_zone       = "${var.aws_region}a"
   map_public_ip_on_launch = true
-  tags = { Name = "cloudops-public-subnet-hyd" }
+  tags = {
+    Name = "cloudops-public-subnet-hyd"
+  }
 }
 
 resource "aws_subnet" "private" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = "10.0.2.0/24"
   availability_zone = "${var.aws_region}b"
-  tags = { Name = "cloudops-private-subnet-hyd" }
+  tags = {
+    Name = "cloudops-private-subnet-hyd"
+  }
 }
 
 resource "aws_route_table" "public" {
@@ -55,7 +61,9 @@ resource "aws_route_table" "public" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.main.id
   }
-  tags = { Name = "cloudops-rt-hyd" }
+  tags = {
+    Name = "cloudops-rt-hyd"
+  }
 }
 
 resource "aws_route_table_association" "public" {
@@ -93,10 +101,14 @@ resource "aws_instance" "app" {
   instance_type          = "t3.micro"
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.main.id]
-  tags = { Name = "cloudops-app-hyd" }
+  tags = {
+    Name = "cloudops-app-hyd"
+  }
 }
 
 resource "aws_s3_bucket" "logs" {
   bucket = "cloudops-logs-hyd-${random_id.bucket_suffix.hex}"
-  tags = { Name = "cloudops-logs-hyd" }
+  tags = {
+    Name = "cloudops-logs-hyd"
+  }
 }
